@@ -97,6 +97,37 @@ section{padding:90px 0;position:relative}
 .prompt pre{padding:16px 18px;font:400 14.5px/1.65 "JetBrains Mono",monospace;white-space:pre-wrap;word-break:break-word;color:#EDE6F7}
 .prompt pre .fill{color:var(--butter);background:rgba(255,226,122,.1);border-radius:4px;padding:0 3px}
 
+/* folder tree */
+.tree{margin-top:40px;max-width:820px}
+.troot{display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,rgba(255,179,138,.16),rgba(255,95,162,.16));border:1px solid rgba(255,95,162,.45);border-radius:24px;padding:18px 22px}
+.troot .fi{font-size:40px;line-height:1}
+.troot b{font:800 30px/1 "Barlow Condensed";text-transform:uppercase;display:block}
+.troot span{color:#E4DDEF;font-size:15px}
+.tbranch{margin-left:34px;padding:18px 0 4px 26px;border-left:2px dashed #4A4462}
+.tgroup{position:relative;margin-bottom:18px}
+.tgroup::before{content:"";position:absolute;left:-26px;top:14px;width:20px;border-top:2px dashed #4A4462}
+.tlbl{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:10px}
+.tlbl.sh{background:rgba(155,140,255,.15);color:var(--violet)}
+.tlbl.pv{background:rgba(124,240,192,.12);color:var(--mint)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.tn{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:14.5px;line-height:1.4;color:var(--mute)}
+.tn b{display:block;color:var(--ink);font:700 16px Barlow;margin-bottom:2px}
+.tn.hot{border-color:rgba(255,226,122,.5)}
+.tn.hot b::after{content:" NEW";font-size:11px;color:var(--butter);letter-spacing:.08em}
+.tvid{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px}
+.tvid > b{display:block;font:700 17px Barlow;margin-bottom:10px}
+.tvid .tgrid{grid-template-columns:repeat(3,1fr)}
+.tvid .tn{background:#0E0C18}
+.tghost{margin-top:10px;border:1px dashed #4A4462;border-radius:18px;padding:12px 14px;color:var(--mute);font-size:14.5px}
+.why{margin-top:26px;max-width:820px;background:rgba(255,226,122,.07);border:1px solid rgba(255,226,122,.3);border-radius:18px;padding:16px 20px;color:#E9E2C8;font-size:16px}
+.why b{color:var(--butter)}
+@media (max-width:560px){
+  .tbranch{margin-left:18px;padding-left:16px}
+  .tgroup::before{left:-16px;width:12px}
+  .tvid .tgrid{grid-template-columns:1fr}
+  .troot b{font-size:26px}
+}
+
 /* sound */
 .sound{background:radial-gradient(800px 400px at 80% 0%,rgba(255,95,162,.25),transparent),var(--bg2);border-block:1px solid var(--line)}
 .sound-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
@@ -252,6 +283,85 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px;bo
   </div>
 </section>
 
+<section id="folders" style="padding-top:20px">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Step 00 · before anything else</span>
+      <h2>Set up your <span class="grad">folders first.</span></h2>
+      <p class="intro">Do this once and Claude always knows where your videos, references and finished edits go. One big folder, one small folder per video, and a few things every video shares.</p>
+    </div>
+
+    <div class="tree reveal">
+      <div class="troot"><span class="fi">📁</span><div><b>Video Editor</b><span>Your one big folder. Open this folder in Claude's Code tab every time you edit.</span></div></div>
+      <div class="tbranch">
+        <div class="tgroup">
+          <span class="tlbl sh">Shared · every video uses these</span>
+          <div class="tgrid">
+            <div class="tn hot"><b>📥 inbox/</b>Not sure where something goes? Drop it here. Claude files it for you.</div>
+            <div class="tn"><b>🎨 brand guidelines/</b>The references you loved, saved as your permanent look.</div>
+            <div class="tn hot"><b>🔊 brand guidelines/sounds/</b>Your favourite sound effects, reused in every edit.</div>
+            <div class="tn"><b>📝 my rules.md</b>Always / never. "No whoosh sounds." "Captions never on my face."</div>
+            <div class="tn"><b>📍 placements.md</b>Where captions, cards and effects sit on screen.</div>
+            <div class="tn"><b>🤖 CLAUDE.md</b>Claude's own instructions for this folder. It reads them every time you open the folder.</div>
+          </div>
+        </div>
+        <div class="tgroup">
+          <span class="tlbl pv">One folder per video</span>
+          <div class="tvid">
+            <b>📁 2026-11-13 morning routine/</b>
+            <div class="tgrid">
+              <div class="tn"><b>🎥 raw/</b>What you filmed. Never edited, never deleted.</div>
+              <div class="tn"><b>💡 references/</b>Reels you want this video to feel like.</div>
+              <div class="tn"><b>✅ exports/</b>Finished edits, ready to post.</div>
+            </div>
+          </div>
+          <div class="tghost">📁 2026-11-20 next video/ … every new video gets its own, dated so they stay in order</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why reveal"><b>Why not just raw / references / exports?</b> Fine for one video. By video five you can't tell which take goes with which edit, and the reels you loved never turn into your style. Per-video folders keep each edit tidy. The shared folders make every edit look like you.</div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">00</div>
+        <div>
+          <span class="tag">One time · 2 min</span>
+          <h3>Make your folders</h3>
+          <ul>
+            <li>Make an empty folder called <b>Video Editor</b> (Desktop or Documents is fine)</li>
+            <li>In Claude, open the <b>Code</b> tab and pick that folder</li>
+            <li>Paste this prompt and say yes when it asks</li>
+          </ul>
+          <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt 0 · folders</span><button class="copy">Copy</button></div>
+<pre>Set up this folder as my video editing workspace. Don't delete, move or overwrite anything that's already here.
+
+1. Create these folders: "inbox", "brand guidelines" and "brand guidelines/sounds".
+2. Create "my rules.md" with two headings, Always and Never, and one example line under each.
+3. Create "placements.md" with headings for Captions, Cards and titles, Effects and Keep clear. Add one starter line under each, for example "Captions sit at chest height, never on my face".
+4. Create "brand guidelines/README.md" where you'll list my favourite references and what I love about each.
+5. Create a CLAUDE.md file with these house rules, so you follow them every time I open this folder:
+   - Every new video gets its own folder named "YYYY-MM-DD short name" with raw, references and exports inside.
+   - When I drop files in inbox, tell me which video you think each belongs to, then move it after I say yes. Footage I filmed goes to raw, reels or screenshots I like go to references, finished edits go to exports.
+   - Save finished edits only in that video's exports folder. Never delete or overwrite anything in raw.
+   - Before every edit, read my rules.md, placements.md and brand guidelines.
+   - When I say a reference is a favourite, copy it into brand guidelines and add one line to its README on what I love about it.
+   - When I give a note like "never do X" or "always put Y here", ask if I want it saved, then add it to my rules.md or placements.md.
+6. Make my first video folder, with today's date and the name "<span class="fill">my first video</span>".
+7. Show me the finished folder tree and explain each part in one plain line.</pre></div>
+          <p style="margin-top:14px">After that, just talk to it:</p>
+          <div class="chips" style="margin-top:12px">
+            <button class="chip" data-copy="New video: [name]. Make its folder.">New <b>video folder</b></button>
+            <button class="chip" data-copy="Sort my inbox.">Sort my <b>inbox</b></button>
+            <button class="chip" data-copy="Make [file name] a favourite. I love the [captions / colours / pacing].">Save a <b>favourite</b></button>
+            <button class="chip" data-copy="From now on, never [thing]. Save it to my rules.">Add a <b>rule</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="steps" style="padding-top:20px">
   <div class="wrap">
     <div class="reveal">
@@ -369,6 +479,24 @@ When I say "done, run my notes", change only the beats I wrote on, show me the n
         <div><b>Every cut</b>a tiny click</div>
         <div><b>Number cards</b>a bell</div>
         <div><b>Pop-ups</b>a bubble pop</div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap reveal" style="margin-top:44px">
+    <div class="step" style="grid-template-columns:1fr">
+      <div>
+        <span class="tag">New · free gift · 2 min</span>
+        <h3>Find real sounds + put one on every cut</h3>
+        <p>My free <b>SFX finder</b> skill searches thousands of real sound effects on Openverse (mostly Freesound). It only shows <b>CC0</b> sounds, so they're free for anything, paid work included. It saves your picks into <b>brand guidelines/sounds</b> with credits logged, then lines them up on your cuts.</p>
+        <p style="margin-top:12px"><a class="btn ghost" href="free-sfx-finder.zip" download style="padding:10px 18px;font-size:15px">Download the skill .zip →</a></p>
+        <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt · install the SFX finder</span><button class="copy">Copy</button></div>
+<pre>Download <span data-base>free-sfx-finder.zip</span> and unzip it into ~/.claude/skills/ so the folder is ~/.claude/skills/free-sfx-finder. Then search it for "click" to check it works, and tell me in plain English what it does.</pre></div>
+        <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt · sound on every cut</span><button class="copy">Copy</button></div>
+<pre>Add sound effects to my edit of <span class="fill">[video name]</span>.
+1. List every cut and pop-up with its exact time.
+2. Use the free SFX finder to find real sounds: a soft impact for the hook, a tiny click on every cut, a bell for number cards, a pop for pop-ups. Show me 3 options for each before downloading.
+3. Put the loudest part of each sound exactly on the cut, keep them well under my voice, and don't repeat the same file twice in a row.
+4. Show me a short table: time, what's on screen, which sound. Wait for my OK, then render.</pre></div>
       </div>
     </div>
   </div>
