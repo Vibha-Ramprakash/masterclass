@@ -258,10 +258,10 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px;bo
         <p>My open effects pack. Words behind your head, LED signs, comment boxes, glass widgets and more.</p>
         <span class="go">Open on GitHub →</span>
       </a>
-      <a class="kcard" href="vibha-practice-clip.mp4" download>
+      <a class="kcard" href="vibha-demo-clip.mp4" download>
         <div class="ic" style="background:rgba(124,240,192,.15)">📱</div>
-        <h4>My practice clip</h4>
-        <p>No video of your own yet? Edit mine. 34 seconds, cut from my 22 effects reel (the full one is on my page).</p>
+        <h4>My demo clip</h4>
+        <p>No video of your own yet? Edit mine. My take from tonight: 37 seconds, retakes already trimmed, so it edits fast (28 MB).</p>
         <span class="go">Download clip →</span>
       </a>
     </div>
@@ -379,6 +379,13 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px;bo
           <p>This installs the tools that let Claude actually edit video. The first time takes a while because the speech model downloads. Grab a coffee. You only do this once.</p>
           <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt 1 · baseline</span><button class="copy">Copy</button></div>
 <pre>Install ffmpeg, Python 3.12, Pillow, numpy and a Whisper transcriber on this computer for me. Then run one short test transcription so the speech model downloads now. Explain every step in plain English and check each one works at the end.</pre></div>
+          <div class="kitlist" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+            <div><b>ffmpeg</b>The video engine. Cuts, joins, adds sound, exports.</div>
+            <div><b>Python 3.12</b>The language Claude's editing scripts run on.</div>
+            <div><b>Pillow</b>Draws text and images: captions, cards, titles.</div>
+            <div><b>numpy</b>Fast maths on every frame: zooms, colours, moves.</div>
+            <div><b>Whisper</b>Turns your voice into text with timings, so captions line up.</div>
+          </div>
         </div>
       </div>
 
@@ -404,11 +411,9 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px;bo
             <li>Under 30 seconds is the sweet spot. Longer = more time and tokens</li>
             <li>iPhone? Turn off <b>Settings → Camera → Formats → HDR Video</b>, or the colours come out flat</li>
           </ul>
-          <p style="margin-top:12px">Video too long? Paste your script here first:</p>
-          <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt 3 · trim the script</span><button class="copy">Copy</button></div>
-<pre>Cut this script to 35 seconds or less. Keep my voice and my hook.
-
-<span class="fill">[paste your script]</span></pre></div>
+          <p style="margin-top:14px"><b>Optional · video too long?</b> Only if you're using your own video (my demo clip is already trimmed). No script needed. Drag your video into Claude and paste this. Claude listens, writes the transcript and suggests the cuts. You just say yes or no.</p>
+          <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Optional · trim it for me</span><button class="copy">Copy</button></div>
+<pre>My video is too long. Transcribe it word for word, then suggest which parts to cut so it lands under 35 seconds. Keep my hook and my voice. Cut repeats, retakes and filler first. Show me each cut as a list (time, the exact words, why), wait for my OK, then save the trimmed video next to the original.</pre></div>
         </div>
       </div>
 
@@ -418,8 +423,16 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px;bo
           <span class="tag">Every video · the magic one</span>
           <h3>Edit my video</h3>
           <p>Drag your video into the Claude window, then paste this. It cuts the dead air, writes the cover title, builds the cards, captions every word, adds effects and free sound effects, and checks its own work.</p>
-          <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt 4 · edit</span><button class="copy">Copy</button></div>
+          <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt 3 · edit</span><button class="copy">Copy</button></div>
 <pre>Edit my video with the nate-herk-style-edit skill. Follow every step in the skill, including the Mixkit sound effects step. Make the cover title and card titles short and punchy, in my words. Here are reels I love for the pace: <span class="fill">[paste 2-3 reel links]</span>. Before you hand it over, look at the sheet and both covers yourself and fix anything that looks off.</pre></div>
+          <p style="margin-top:18px"><b>Not into text-heavy edits?</b> That's okay. Save 2-3 reels you love into this video's <b>references</b> folder (download them or screen-record them), then paste this instead. Claude studies them and copies the style.</p>
+          <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Alternative · edit like my references</span><button class="copy">Copy</button></div>
+<pre>I don&#x27;t want a text-heavy edit. Edit my video in the style of the reels in this video&#x27;s references folder instead.
+1. Study each reference first. Pull a frame every half second and transcribe it, then write me a short style card: how often it cuts, zooms and punch-ins, captions (size, font style, colour, position, words at a time, or none), graphics and b-roll, colour and light, music and sound effects, and how the first 2 seconds hook.
+2. Show me the style card and wait for my OK.
+3. Edit my video to match it, using my own words and footage. Never put text over my face.
+4. Before you hand it over, put 3 frames of my edit next to 3 frames of the reference and fix anything that doesn&#x27;t match.
+5. Save the style card in brand guidelines as <span class="fill">[style name]</span>.md, so next time I can just say &quot;edit like <span class="fill">[style name]</span>&quot;.</pre></div>
         </div>
       </div>
 
@@ -448,7 +461,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px;bo
           <span class="tag">Level up</span>
           <h3>Build your storyboard</h3>
           <p>See your whole edit as cards, with two fresh ideas for every beat. Type a note under any card and Claude changes only that beat.</p>
-          <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt 5 · storyboard</span><button class="copy">Copy</button></div>
+          <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt 4 · storyboard</span><button class="copy">Copy</button></div>
 <pre>Make me a storyboard of this edit as one page I can open.
 One card per beat, in order. On each card show:
 1. a still from that moment
