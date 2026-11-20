@@ -261,7 +261,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px;bo
       <a class="kcard" href="vibha-demo-clip.mp4" download>
         <div class="ic" style="background:rgba(124,240,192,.15)">📱</div>
         <h4>My demo clip</h4>
-        <p>No video of your own yet? Edit mine. My take from tonight: 37 seconds, retakes already trimmed, so it edits fast (28 MB).</p>
+        <p>No video of your own yet? Edit mine. My take “You think AI is killing your creativity”: 48 seconds, retakes already trimmed, so it edits fast (56 MB).</p>
         <span class="go">Download clip →</span>
       </a>
     </div>
@@ -392,17 +392,6 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px;bo
       <div class="step reveal">
         <div class="num">02</div>
         <div>
-          <span class="tag">One time · 5 min</span>
-          <h3>Install the free skill + 51 effects</h3>
-          <p>This gives Claude my edit style starter and my whole free effects pack.</p>
-          <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt 2 · install</span><button class="copy">Copy</button></div>
-<pre>Download my edit skill from <span data-base>nate-style-edit-skill.zip</span> and unzip it into ~/.claude/skills/ so the folder is ~/.claude/skills/nate-herk-style-edit. Install Node.js if I don't have it, then run "npm i puppeteer-core" inside its v2 folder. Then clone https://github.com/Vibha-Ramprakash/claude-video-effects into ~/.claude/skills/effects and run its setup script until it prints READY. Check both work, then tell me in plain English what you installed.</pre></div>
-        </div>
-      </div>
-
-      <div class="step reveal">
-        <div class="num">03</div>
-        <div>
           <span class="tag">Every video</span>
           <h3>Get your video ready</h3>
           <ul>
@@ -414,6 +403,17 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px;bo
           <p style="margin-top:14px"><b>Optional · video too long?</b> Only if you're using your own video (my demo clip is already trimmed). No script needed. Drag your video into Claude and paste this. Claude listens, writes the transcript and suggests the cuts. You just say yes or no.</p>
           <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Optional · trim it for me</span><button class="copy">Copy</button></div>
 <pre>My video is too long. Transcribe it word for word, then suggest which parts to cut so it lands under 35 seconds. Keep my hook and my voice. Cut repeats, retakes and filler first. Show me each cut as a list (time, the exact words, why), wait for my OK, then save the trimmed video next to the original.</pre></div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="num">03</div>
+        <div>
+          <span class="tag">One time · 5 min</span>
+          <h3>Install the free skill + 51 effects</h3>
+          <p>This gives Claude my edit style starter and my whole free effects pack.</p>
+          <div class="prompt"><div class="prompt-h"><span class="lbl"><i></i>Prompt 2 · install</span><button class="copy">Copy</button></div>
+<pre>Download my edit skill from <span data-base>nate-style-edit-skill.zip</span> and unzip it into ~/.claude/skills/ so the folder is ~/.claude/skills/nate-herk-style-edit. Install Node.js if I don't have it, then run "npm i puppeteer-core" inside its v2 folder. Then clone https://github.com/Vibha-Ramprakash/claude-video-effects into ~/.claude/skills/effects and run its setup script until it prints READY. Check both work, then tell me in plain English what you installed.</pre></div>
         </div>
       </div>
 
@@ -438,25 +438,6 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px;bo
 
       <div class="step reveal">
         <div class="num">05</div>
-        <div>
-          <span class="tag">Every video</span>
-          <h3>Make it yours</h3>
-          <p>Claude drafts, you approve. Tap any of these to copy it, fill the blank, paste.</p>
-          <div class="chips">
-            <button class="chip" data-copy="Change the cover title to: [your title]">Change the <b>cover title</b></button>
-            <button class="chip" data-copy="Make card number [2] say: [your words]">Rewrite a <b>card</b></button>
-            <button class="chip" data-copy="Add the [led-sign] effect from my effects pack at [8] seconds with the text [YOUR WORD].">Add an <b>effect</b> at a moment</button>
-            <button class="chip" data-copy="Show me the list of all 51 effects in my effects pack with one line on what each does.">See all <b>51 effects</b></button>
-            <button class="chip" data-copy="Swap the sound on the numbered cards for a different free Mixkit sound. Browse the 'pop' category and pick something soft.">Swap a <b>sound</b></button>
-            <button class="chip" data-copy="The captions cover my face at [12] seconds. Move them and re-render.">Fix <b>captions</b> on my face</button>
-            <button class="chip" data-copy="Remove the part where I say [words] and re-render.">Cut a <b>line</b></button>
-            <button class="chip" data-copy="Render the final version in 4K.">Render in <b>4K</b></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="step reveal">
-        <div class="num">06</div>
         <div>
           <span class="tag">Level up</span>
           <h3>Build your storyboard</h3>
